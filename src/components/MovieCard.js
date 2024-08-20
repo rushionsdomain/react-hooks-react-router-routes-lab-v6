@@ -1,12 +1,17 @@
-import {Link} from 'react-router-dom';
+// src/components/MovieCard.js
+import React from "react";
 
-function MovieCard({title}) {
-  
+const MovieCard = ({ movie }) => {
   return (
-    <article>
-        <h2>{title}</h2>
-        {/* What should go here? */}
-    </article>
+    <div className="movie-card">
+      <h1>{movie.title}</h1>
+      <p>{movie.time}</p>
+      <div>
+        {movie.genres.map((genre) => (
+          <span key={genre}>{genre}</span>
+        ))}
+      </div>
+    </div>
   );
 };
 
